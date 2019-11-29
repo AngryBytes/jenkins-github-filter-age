@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.jenkins-ci.plugins</groupId>
+        <artifactId>plugin</artifactId>
+        <version>3.54</version>
+        <relativePath />
+    </parent>
+
+    <name>GitHub 'Filter by age'</name>
+    <url>https://github.com/AngryBytes/jenkins-github-filter-age</url>
+    <description>Adds an GitHub source filter to skip branches where the latest commit is older than a certain number of days.</description>
+    <artifactId>github-filter-age</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>hpi</packaging>
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>https://opensource.org/licenses/MIT</url>
+        </license>
+    </licenses>
+
+    <properties>
+        <revision>1.0</revision>
+        <changelist>-SNAPSHOT</changelist>
+        <jenkins.version>2.138.4</jenkins.version>
+        <java.level>8</java.level>
+        <github-branch-source.version>2.5.8</github-branch-source.version>
+    </properties>
+
+    <scm>
+        <connection>scm:git:git://github.com/AngryBytes/jenkins-github-filter-age.git</connection>
+        <developerConnection>scm:git:git@github.com:AngryBytes/jenkins-github-filter-age.git</developerConnection>
+        <url>https://github.com/AngryBytes/jenkins-github-filter-age</url>
+        <tag>${scmTag}</tag>
+    </scm>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.jenkins-ci.plugins</groupId>
+            <artifactId>github-branch-source</artifactId>
+            <version>${github-branch-source.version}</version>
+        </dependency>
+    </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>3.7</version>
+            </dependency>
+            <dependency>
+                <groupId>org.jenkins-ci.plugins</groupId>
+                <artifactId>token-macro</artifactId>
+                <version>2.6</version>
+            </dependency>
+            <dependency>
+                <groupId>org.jenkins-ci.plugins.workflow</groupId>
+                <artifactId>workflow-step-api</artifactId>
+                <version>2.19</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <repositories>
+        <repository>
+            <id>repo.jenkins-ci.org</id>
+            <url>https://repo.jenkins-ci.org/public/</url>
+        </repository>
+    </repositories>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>repo.jenkins-ci.org</id>
+            <url>https://repo.jenkins-ci.org/public/</url>
+        </pluginRepository>
+    </pluginRepositories>
+
+</project>
